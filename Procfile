@@ -1,1 +1,2 @@
-web: node backend/index.js
+web: npm start
+worker: node backend/index.js
