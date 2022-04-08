@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 const PORT = 8080;
+const uri = process.env.MONGODB_URI;
 
 const app = express();
 const todoRoutes = require("./routes/todoRoutes")
@@ -14,7 +15,7 @@ todoRoutes. */
 app.use(express.json())
 app.use(cors());
 
-mongoose.connect("mongodb://localhost/todolist", connectionOptions)
+mongoose.connect(uri, connectionOptions)
     .then(() => console.log("connected successfully"))
     .catch((err) => console.error(err))
 
